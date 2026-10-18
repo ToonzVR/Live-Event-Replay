@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup>
+  <TargetFramework>netstandard2.1</TargetFramework><AssemblyVersion>0.3.3.0</AssemblyVersion><FileVersion>0.3.3.0</FileVersion><Version>0.3.3</Version><Deterministic>true</Deterministic><DebugType>none</DebugType><EnableDefaultCompileItems>false</EnableDefaultCompileItems><LangVersion>latest</LangVersion>
+  <GameDir Condition="'$(GameDir)' == ''">C:\Program Files\Oculus\Software\Software\another-axiom-gorilla-tag</GameDir>
+  <GameManagedDir Condition="'$(GameManagedDir)' == ''">$(GameDir)\Gorilla Tag_Data\Managed</GameManagedDir>
+  <BepInExCoreDir Condition="'$(BepInExCoreDir)' == ''">$(GameDir)\BepInEx\core</BepInExCoreDir>
+ </PropertyGroup>
+ <ItemGroup><Compile Include="MonsterEventWatch.cs" /><Compile Include="ReplaySession.cs" />
+ <Reference Private="false" Include="$(GameManagedDir)\*.dll" Exclude="$(GameManagedDir)\System*.dll;$(GameManagedDir)\mscorlib.dll;$(GameManagedDir)\netstandard.dll" />
+ <Reference Private="false" Include="$(BepInExCoreDir)\BepInEx.dll" />
+ <Reference Private="false" Include="$(BepInExCoreDir)\0Harmony.dll" />
+ </ItemGroup>
+</Project>
+
